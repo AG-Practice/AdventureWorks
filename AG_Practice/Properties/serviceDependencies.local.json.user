@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "secrets1": {
+      "restored": true,
+      "restoreTime": "2020-12-14T19:14:07.5993786Z"
+    },
+    "mssql1": {
+      "restored": true,
+      "restoreTime": "2020-12-14T19:14:21.1459625Z"
+    }
+  },
+  "parameters": {
+    "mssql1.subscriptionId": {
+      "Name": "mssql1.subscriptionId",
+      "Type": "subscription",
+      "Value": "eb2c5628-9936-4f6d-98e1-df4ac1daeff2"
+    },
+    "mssql1.resourceGroupName": {
+      "Name": "mssql1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "AG_Practice_01"
+    }
+  }
+}
