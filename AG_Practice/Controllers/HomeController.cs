@@ -9,10 +9,16 @@ namespace AG_Practice.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IProductService _productService;
+
+        public HomeController(IProductService productService)
+        {
+            this._productService = productService;
+        }
+
         public ActionResult Index()
         {
-            var productService = new ProductService();
-            var product = productService.GetProduct(680);  // Hard coded just for testing purposes
+            var product = _productService.GetProduct(680);  // Hard coded just for testing purposes
             return View(product);
         }
 
