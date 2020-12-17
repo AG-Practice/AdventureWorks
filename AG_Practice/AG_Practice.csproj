@@ -154,7 +154,6 @@
     <Compile Include="Domain\Customer.cs" />
     <Compile Include="Domain\CustomerAddress.cs" />
     <Compile Include="Domain\database_firewall_rules.cs" />
-    <Compile Include="Domain\Interfaces\IProductContext.cs" />
     <Compile Include="ErrorLog.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

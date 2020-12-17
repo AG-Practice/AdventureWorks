@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using AG_Practice.Domain.Interfaces;
 
 namespace AG_Practice.Repository
 {

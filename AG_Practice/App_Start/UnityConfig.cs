@@ -1,5 +1,4 @@
 using System.Web.Mvc;
-using AG_Practice.Domain.Interfaces;
 using AG_Practice.Repository;
 using AG_Practice.Service;
 using AG_Practice.Service.Implementations;
@@ -15,7 +14,6 @@ namespace AG_Practice
 			var container = new UnityContainer();
             container.RegisterType<IProductService, ProductService>();
             container.RegisterType<IProductRepository, ProductRepository>();
-            container.RegisterType<IProductContext, ProductContext>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }
