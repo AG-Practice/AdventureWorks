@@ -7,11 +7,11 @@ using AG_Practice.Service;
 
 namespace AG_Practice.Controllers
 {
-    public class HomeController : Controller
+    public class ProductController : Controller
     {
         private readonly IProductService _productService;
 
-        public HomeController(IProductService productService)
+        public ProductController(IProductService productService)
         {
             this._productService = productService;
         }
@@ -22,10 +22,13 @@ namespace AG_Practice.Controllers
             return View(product);
         }
 
+        public ActionResult Wizard()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 

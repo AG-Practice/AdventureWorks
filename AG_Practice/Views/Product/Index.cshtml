@@ -1,0 +1,26 @@
+﻿@model AG_Practice.Product
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<h2>Product Example</h2>
+
+<div>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Color</th>
+            <th>List Price</th>
+            <th>Product Number</th>
+        </tr>
+        <tr>
+            <td>@Model.Name</td>
+            <td>@Model.Color</td>
+            <td>@Model.ListPrice</td>
+            <td>@Model.ProductNumber</td>
+        </tr>
+    </table>
+</div>
+

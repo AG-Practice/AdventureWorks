@@ -1,0 +1,30 @@
+﻿@model AG_Practice.Models.ProductDto
+
+@{
+    ViewBag.Title = "Product Wizard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Product Wizard</h2>
+
+<div id="example-vertical">
+    <h3>Category</h3>
+    <section>
+        <p>In what category does this product fall under?</p>
+
+    </section>
+    <h3>Details</h3>
+    <section>
+        <p>Specify the product being sold by Adventure Works.</p>
+    </section>
+    <h3>Model</h3>
+    <section>
+        <p>What is the model and description of this product?</p>
+    </section>
+</div>
+
+@section Scripts {
+    <script src="~/Content/jquery.steps.css"></script>
+    <script src="~/Scripts/jquery.steps.js"></script>
+    <script src="~/Scripts/Views/ProductWizard.js" asp-append-version="true"></script>
+}
