@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AG_Practice.Models;
 
-namespace AG_Practice.Service
+namespace AG_Practice.Repository
 {
-    public interface IProductService 
+    public interface IProductRepository
     {
-        ProductDto GetProduct(int productId);
+        Product GetProduct(int productId);
         IEnumerable<Product> GetAllProducts();
     }
 }

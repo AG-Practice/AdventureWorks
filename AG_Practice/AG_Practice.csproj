@@ -154,6 +154,7 @@
     <Compile Include="Domain\Customer.cs" />
     <Compile Include="Domain\CustomerAddress.cs" />
     <Compile Include="Domain\database_firewall_rules.cs" />
+    <Compile Include="Domain\Interfaces\IProductContext.cs" />
     <Compile Include="ErrorLog.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -171,6 +172,8 @@
     <Compile Include="Domain\vGetAllCategory.cs" />
     <Compile Include="Domain\vProductAndDescription.cs" />
     <Compile Include="Domain\vProductModelCatalogDescription.cs" />
+    <Compile Include="Repository\IProductRepository.cs" />
+    <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Service\Interfaces\IProductService.cs" />
     <Compile Include="Service\Implementations\ProductService.cs" />
   </ItemGroup>
@@ -212,7 +215,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Product\About.cshtml" />
-    <Content Include="Views\Product\Contact.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Product\Wizard.cshtml" />
   </ItemGroup>

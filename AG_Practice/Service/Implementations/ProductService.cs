@@ -1,26 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using AG_Practice.Models;
+using AG_Practice.Repository;
 
-namespace AG_Practice.Service
+namespace AG_Practice.Service.Implementations
 {
-    public class ProductService : ProductContext, IProductService
+    public class ProductService : IProductService
     {
+        private readonly IProductRepository _repository;
+
+        public ProductService(IProductRepository repository)
+        {
+            this._repository = repository;
+        }
+
         public IEnumerable<Product> GetAllProducts()
         {
             throw new NotImplementedException();
         }
 
-        public Product GetProduct(int productId)
+        public ProductDto GetProduct(int productId)
         {
-            Product product;
-            using (var context = new ProductContext())
-            {
-                product = context.Products.Single(x => x.ProductID == productId);
-            }
+            var product = _repository.GetProduct(productId);
 
-            return product;
+            return new ProductDto()
+            {
+                Name = product.Name,
+                Color = product.Color,
+                ListPrice = product.ListPrice,
+                ProductNumber = product.ProductNumber
+            };
         }
     }
 }

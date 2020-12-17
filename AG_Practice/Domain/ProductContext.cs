@@ -2,10 +2,11 @@ using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
+using AG_Practice.Domain.Interfaces;
 
 namespace AG_Practice
 {
-    public partial class ProductContext : DbContext
+    public partial class ProductContext : DbContext, IProductContext
     {
         public ProductContext()
             : base("name=ProductContext")

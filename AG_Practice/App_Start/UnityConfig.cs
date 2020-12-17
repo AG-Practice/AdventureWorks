@@ -1,5 +1,8 @@
 using System.Web.Mvc;
+using AG_Practice.Domain.Interfaces;
+using AG_Practice.Repository;
 using AG_Practice.Service;
+using AG_Practice.Service.Implementations;
 using Unity;
 using Unity.Mvc5;
 
@@ -10,12 +13,9 @@ namespace AG_Practice
         public static void RegisterComponents()
         {
 			var container = new UnityContainer();
-            
-            // register all your components with the container here
-            // it is NOT necessary to register your controllers
-            
             container.RegisterType<IProductService, ProductService>();
-            
+            container.RegisterType<IProductRepository, ProductRepository>();
+            container.RegisterType<IProductContext, ProductContext>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }
