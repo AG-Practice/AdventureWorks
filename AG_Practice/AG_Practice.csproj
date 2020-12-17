@@ -171,8 +171,8 @@
     <Compile Include="Domain\vGetAllCategory.cs" />
     <Compile Include="Domain\vProductAndDescription.cs" />
     <Compile Include="Domain\vProductModelCatalogDescription.cs" />
-    <Compile Include="Repository\IProductRepository.cs" />
-    <Compile Include="Repository\ProductRepository.cs" />
+    <Compile Include="Repository\Interfaces\IProductRepository.cs" />
+    <Compile Include="Repository\Implementations\ProductRepository.cs" />
     <Compile Include="Service\Interfaces\IProductService.cs" />
     <Compile Include="Service\Implementations\ProductService.cs" />
   </ItemGroup>
