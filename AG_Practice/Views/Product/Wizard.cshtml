@@ -1,4 +1,4 @@
-﻿@model AG_Practice.Models.ProductDto
+﻿@model IEnumerable<AG_Practice.Models.ProductCategoryDto>
 
 @{
     ViewBag.Title = "Product Wizard";
@@ -6,25 +6,26 @@
 }
 
 <h2>Product Wizard</h2>
+@using (Html.BeginForm("PostNewProduct", "Product", FormMethod.Post, new { @id = "form" }))
+{
+    <div id="example-vertical">
+        <h3>Category</h3>
+        <section>
+            <h5>In what category does this product fall under?</h5>
+            @Html.DropDownList("ProductCategoryId", Model.Select(category => new SelectListItem() { Text = category.Name, Value = category.ProductCategoryId.ToString() }))
+        </section>
+        <h3>Details</h3>
+        <section>
+            <p>Specify the product being sold by Adventure Works.</p>
+        </section>
+        <h3>Model</h3>
+        <section>
+            <p>What is the model and description of this product?</p>
+        </section>
+    </div>
+}
 
-<div id="example-vertical">
-    <h3>Category</h3>
-    <section>
-        <p>In what category does this product fall under?</p>
-
-    </section>
-    <h3>Details</h3>
-    <section>
-        <p>Specify the product being sold by Adventure Works.</p>
-    </section>
-    <h3>Model</h3>
-    <section>
-        <p>What is the model and description of this product?</p>
-    </section>
-</div>
 
 @section Scripts {
-    <script src="~/Content/jquery.steps.css"></script>
-    <script src="~/Scripts/jquery.steps.js"></script>
     <script src="~/Scripts/Views/ProductWizard.js" asp-append-version="true"></script>
 }

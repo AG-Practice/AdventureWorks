@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AG_Practice.Models;
 using AG_Practice.Service;
+using WebGrease.Css.Ast.Selectors;
 
 namespace AG_Practice.Controllers
 {
@@ -23,13 +25,20 @@ namespace AG_Practice.Controllers
         }
 
         public ActionResult Wizard()
-        {
-            return View();
+        { 
+            return View(_productService.GetParentProductCategories());
         }
 
         public ActionResult About()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult PostNewProduct(ProductCategoryDto category)
+        {
+            var t = category;
+            return View("Index");
         }
     }
 }
