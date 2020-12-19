@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Web;
+using Unity;
+
 
 namespace AG_Practice.Repository
 {
     public class ProductRepository : IProductRepository
     {
+        [Unity.Dependency]
+        public ProductContext DbContext { get; set; }
+
         public IEnumerable<Product> GetAllProducts()
         {
             throw new NotImplementedException();
@@ -14,13 +20,16 @@ namespace AG_Practice.Repository
 
         public Product GetProduct(int productId)
         {
-            Product product;
-            using(var context = new ProductContext())
-            {
-                product = context.Products.Single(x => x.ProductID == productId);
-            }
+            return DbContext
+                .Products
+                .Single(x => x.ProductID == productId);
+        }
 
-            return product;
+        public IEnumerable<ProductCategory> SelectParentProductCategories()
+        {
+            return DbContext
+                .ProductCategories
+                .Where(x => x.ParentProductCategoryID == null);
         }
     }
 }

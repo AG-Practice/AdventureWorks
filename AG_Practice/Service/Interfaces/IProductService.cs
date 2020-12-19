@@ -11,5 +11,6 @@ namespace AG_Practice.Service
     {
         ProductDto GetProduct(int productId);
         IEnumerable<Product> GetAllProducts();
+        IEnumerable<ProductCategoryDto> GetParentProductCategories();
     }
 }

@@ -10,5 +10,6 @@ namespace AG_Practice.Repository
     {
         Product GetProduct(int productId);
         IEnumerable<Product> GetAllProducts();
+        IEnumerable<ProductCategory> SelectParentProductCategories();
     }
 }

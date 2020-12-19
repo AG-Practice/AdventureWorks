@@ -32,5 +32,14 @@ namespace AG_Practice.Service.Implementations
                 ProductNumber = product.ProductNumber
             };
         }
+
+        public IEnumerable<ProductCategoryDto> GetParentProductCategories()
+        {
+            return _repository.SelectParentProductCategories().Select(x => new ProductCategoryDto()
+                {
+                    ProductCategoryId = x.ProductCategoryID,
+                    Name = x.Name
+                });
+        }
     }
 }
